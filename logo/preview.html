@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Cobalt Labs — Logo</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+  :root {
+    --cobalt: #1B3FFF;
+    --cyan:   #D6FAFF;
+    --ink:    #0B0D14;
+    --cream:  #F6F1E4;
+    --paper:  #FFFCF3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: "Space Grotesk", system-ui, sans-serif;
+    color: var(--ink);
+    background: var(--cream);
+    padding: 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .meta {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: rgba(11,13,20,0.55);
+  }
+  h1 {
+    margin: 8px 0 48px;
+    font-size: 44px;
+    letter-spacing: -0.03em;
+  }
+  .grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    max-width: 1100px;
+  }
+  .card {
+    border-radius: 18px;
+    padding: 56px 48px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    min-height: 220px;
+    justify-content: space-between;
+    border: 1px solid rgba(11,13,20,0.08);
+  }
+  .card-bg-cream { background: var(--paper); }
+  .card-bg-cobalt { background: var(--cobalt); color: var(--cream); border-color: transparent; }
+  .card-bg-ink { background: var(--ink); color: var(--cream); border-color: transparent; }
+  .lock {
+    display: inline-flex;
+    align-items: center;
+    gap: 18px;
+    font-weight: 700;
+    font-size: 44px;
+    letter-spacing: -0.035em;
+    line-height: 1;
+  }
+  .lock svg { flex: 0 0 auto; width: 56px; height: 56px; }
+  .lock.big { font-size: 80px; gap: 28px; }
+  .lock.big svg { width: 96px; height: 96px; }
+  .lbl {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    opacity: 0.55;
+  }
+  .full { grid-column: 1 / -1; }
+  .mark-row {
+    display: flex;
+    align-items: center;
+    gap: 56px;
+  }
+  .mark-row svg { flex: 0 0 auto; }
+  .files {
+    margin-top: 56px;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 13px;
+    line-height: 2;
+    color: rgba(11,13,20,0.7);
+  }
+  .files strong {
+    color: var(--ink);
+    font-family: "Space Grotesk", sans-serif;
+    font-size: 18px;
+    letter-spacing: -0.015em;
+  }
+  .files a { color: var(--cobalt); text-decoration: none; }
+  .files a:hover { text-decoration: underline; }
+
+  /* Inline SVG mark — single source of truth */
+  .m-rect { rx: 22%; ry: 22%; }
+</style>
+</head>
+<body>
+
+<span class="meta">// COBALT LABS · LOGO PACK</span>
+<h1>Mark + horizontal wordmark</h1>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <!-- Mark, parameterised by colors via use -->
+    <symbol id="cl-mark" viewBox="0 0 200 200">
+      <mask id="cl-mask">
+        <rect width="200" height="200" fill="black"/>
+        <circle cx="100" cy="100" r="54" fill="white"/>
+        <circle cx="131" cy="69" r="14" fill="black"/>
+      </mask>
+      <rect width="200" height="200" rx="44" ry="44" fill="var(--m-bg,#1B3FFF)"/>
+      <rect width="200" height="200" fill="var(--m-fg,#D6FAFF)" mask="url(#cl-mask)"/>
+    </symbol>
+  </defs>
+</svg>
+
+<div class="grid">
+
+  <div class="card card-bg-cream full">
+    <span class="lbl">Primary lockup · on cream</span>
+    <div class="lock big">
+      <svg viewBox="0 0 200 200" style="--m-bg:#1B3FFF;--m-fg:#D6FAFF"><use href="#cl-mark"/></svg>
+      <span>Cobalt&nbsp;Labs</span>
+    </div>
+  </div>
+
+  <div class="card card-bg-cobalt">
+    <span class="lbl">On cobalt</span>
+    <div class="lock">
+      <svg viewBox="0 0 200 200" style="--m-bg:#F6F1E4;--m-fg:#1B3FFF"><use href="#cl-mark"/></svg>
+      <span>Cobalt&nbsp;Labs</span>
+    </div>
+  </div>
+
+  <div class="card card-bg-ink">
+    <span class="lbl">On ink</span>
+    <div class="lock">
+      <svg viewBox="0 0 200 200" style="--m-bg:#1B3FFF;--m-fg:#D6FAFF"><use href="#cl-mark"/></svg>
+      <span>Cobalt&nbsp;Labs</span>
+    </div>
+  </div>
+
+  <div class="card card-bg-cream full">
+    <span class="lbl">Mark only · clear-space + sizing</span>
+    <div class="mark-row">
+      <svg viewBox="0 0 200 200" width="120" height="120" style="--m-bg:#1B3FFF;--m-fg:#D6FAFF"><use href="#cl-mark"/></svg>
+      <svg viewBox="0 0 200 200" width="80" height="80" style="--m-bg:#1B3FFF;--m-fg:#D6FAFF"><use href="#cl-mark"/></svg>
+      <svg viewBox="0 0 200 200" width="56" height="56" style="--m-bg:#1B3FFF;--m-fg:#D6FAFF"><use href="#cl-mark"/></svg>
+      <svg viewBox="0 0 200 200" width="32" height="32" style="--m-bg:#1B3FFF;--m-fg:#D6FAFF"><use href="#cl-mark"/></svg>
+      <svg viewBox="0 0 200 200" width="80" height="80" style="--m-bg:#0B0D14;--m-fg:#F6F1E4"><use href="#cl-mark"/></svg>
+    </div>
+  </div>
+
+</div>
+
+<div class="files">
+  <strong>Files in this folder</strong><br>
+  <br>
+  <em style="font-family:'Space Grotesk';font-style:normal;color:var(--ink)">Mark only (rounded square + circle)</em><br>
+  →&nbsp;<a href="cobalt-labs-mark-blue.svg">cobalt-labs-mark-blue.svg</a> — cobalt + cyan, transparent BG<br>
+  →&nbsp;<a href="cobalt-labs-mark-ink.svg">cobalt-labs-mark-ink.svg</a> — ink + cream, transparent BG<br>
+  →&nbsp;<a href="cobalt-labs-mark-cream.svg">cobalt-labs-mark-cream.svg</a> — cream + cobalt, for dark backgrounds<br>
+  <br>
+  <em style="font-family:'Space Grotesk';font-style:normal;color:var(--ink)">Horizontal wordmark + mark</em><br>
+  →&nbsp;<a href="cobalt-labs-wordmark.svg">cobalt-labs-wordmark.svg</a> — primary, transparent BG<br>
+  →&nbsp;<a href="cobalt-labs-wordmark-on-cobalt.svg">cobalt-labs-wordmark-on-cobalt.svg</a> — cream on cobalt<br>
+  →&nbsp;<a href="cobalt-labs-wordmark-on-ink.svg">cobalt-labs-wordmark-on-ink.svg</a> — cream on ink<br>
+  <br>
+  <span style="opacity:.7">SVGs use Space Grotesk via Google Fonts @import. Most design tools (Figma, Sketch, Illustrator) render them correctly. For embed-anywhere reliability convert text to outlines in your tool.</span>
+</div>
+
+</body>
+</html>
